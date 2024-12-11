@@ -1,0 +1,83 @@
+/* Container for the entire profile card */
+.profile-card {
+  display: flex; /* Flexbox to align image and details side by side */
+  border: 1px solid #ddd; /* Border around the card */
+  border-radius: 8px; /* Rounded corners */
+  width: 100%; /* Make the card take up full width */
+  max-width: 400px; /* Max width for the card */
+  background-color: #fff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+  overflow: hidden; /* Ensure content doesn't spill out of the card */
+  margin: 10px auto; /* Center the card and add margin */
+  font-family: Arial, sans-serif; /* Set font for text */
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Profile image section */
+.profile-image {
+  /* width: 120px;
+    height: 120px;  */
+  flex: 2;
+  border-radius: 50%; /* Circular image */
+  overflow: hidden; /* Crop image to fit the circle */
+  margin: 20px; /* Margin around the image */
+  display: flex;
+  justify-content: center; /* Center the image inside the circle */
+  align-items: center; /* Vertically center the image */
+}
+
+/* Style the profile image */
+.profile-image img {
+  width: 70px; /* Ensure the image takes full width of its container */
+  object-fit: cover; /* Make sure the image covers the container without stretching */
+  border: black solid;
+}
+
+/* Profile details section */
+.profile-details {
+  display: flex;
+  flex: 4;
+  /* flex-grow: 1; */
+  padding: 20px; /* Add padding around text */
+  flex-direction: column; /* Stack the text elements vertically */
+  justify-content: space-between; /* Space out the elements */
+}
+
+/* Name, description, and address text styling */
+.profile-details h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #333; /* Dark color for the name */
+  font-weight: 600; /* Bold name */
+}
+
+.profile-details p {
+  margin: 5px 0; /* Space between paragraphs */
+  font-size: 1em;
+  color: #555; /* Lighter color for the description and address */
+  line-height: 1.5em;
+}
+
+/* Button at the bottom of the card */
+.summary-button {
+  background-color: #007bff; /* Blue background */
+  color: #fff; /* White text */
+  border: none; /* Remove the default button border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 15px; /* Padding for the button */
+  text-align: center; /* Center the button text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background color change */
+  margin: 1em; /* Space above the button */
+  border: black solid 1px;
+}
+
+/* Hover effect for the button */
+.summary-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

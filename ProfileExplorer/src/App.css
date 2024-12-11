@@ -1,0 +1,7 @@
+body{
+    font-family: "Inter", sans-serif;
+}
+.MuiDialogTitle-root + .css-kw13he-MuiDialogContent-root {
+    padding-top: 0;
+    padding: 4em;
+  }
