@@ -1,0 +1,17 @@
+/* About.css */
+.about-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .about-page h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .about-page p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 3;
+  }
+  

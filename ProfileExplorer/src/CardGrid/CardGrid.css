@@ -1,24 +1,30 @@
 /* Container for the entire card grid */
 .card-grid {
-    display: grid; /* Set display to grid */
-    grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
-    gap: 20px; /* Space between the cards */
-    padding: 20px; /* Padding around the grid */
-    justify-items: center; /* Center the cards within the grid */
-    grid-auto-rows: auto; /* Automatically adjust row height */
+  display: grid; /* Set display to grid */
+  grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
+  gap: 20px; /* Space between the cards */
+  padding: 20px; /* Padding around the grid */
+  justify-items: center; /* Center the cards within the grid */
+  grid-auto-rows: auto; /* Automatically adjust row height */
+}
+
+/* Make the grid responsive: For medium screens (tablets), show 2 cards per row */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* Show 2 columns on medium screens */
   }
-  
-  /* Make the grid responsive: For smaller screens, show 1 card per row */
-  @media (max-width: 768px) {
-    .card-grid {
-      grid-template-columns: 1fr; /* Show 1 column on smaller screens */
-    }
+}
+
+/* For smaller screens (phones), show 1 card per row */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* Show 1 column on smaller screens */
   }
-  
-  /* Optional: Style the individual cards if needed */
-  .profile-card {
-    /* You can reuse the existing styles for individual cards from your ProfileCard.css file */
-    width: 100%;
-    max-width: 350px; /* Limit the width of the card */
-  }
-  
+}
+
+/* Optional: Style the individual cards if needed */
+.profile-card {
+  width: 100%;
+  max-width: 350px; /* Limit the width of the card */
+  box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}

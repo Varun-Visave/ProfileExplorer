@@ -5,15 +5,15 @@ import {
   DialogContent,
   DialogTitle,
   Button,
+  CircularProgress,
 } from "@mui/material";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css"; 
+import "leaflet/dist/leaflet.css";
 import "./ProfileCard.css";
-import Spinner from 'react-bootstrap/Spinner';
 
 const ProfileCard = ({ id, name, description, address, image }) => {
   const [showModal, setShowModal] = useState(false);
-  const [latLong, setLatLong] = useState(null);  // To store latitude and longitude
+  const [latLong, setLatLong] = useState(null); // To store latitude and longitude
   const [loading, setLoading] = useState(false);
 
   // Function to get latitude and longitude from address using Nominatim API
@@ -21,11 +21,13 @@ const ProfileCard = ({ id, name, description, address, image }) => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`
+        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
+          address
+        )}`
       );
       const data = await response.json();
       if (data && data.length > 0) {
-        const { lat, lon } = data[0];  // Get the first result
+        const { lat, lon } = data[0]; // Get the first result
         setLatLong({ lat: parseFloat(lat), lon: parseFloat(lon) });
       } else {
         alert("Address not found.");
@@ -39,7 +41,7 @@ const ProfileCard = ({ id, name, description, address, image }) => {
 
   const handleOpenModal = () => {
     setShowModal(true);
-    getCoordinates(address);  // Fetch coordinates when modal opens
+    getCoordinates(address); // Fetch coordinates when modal opens
   };
 
   const handleCloseModal = () => setShowModal(false);
@@ -81,6 +83,10 @@ const ProfileCard = ({ id, name, description, address, image }) => {
           />
           <div className="modal-content">
             <h3>Name: {name}</h3>
+
+            <p>
+              <b>ID:</b> {id}
+            </p>
             <p>
               <b>Description:</b> {description}
             </p>
@@ -105,7 +111,15 @@ const ProfileCard = ({ id, name, description, address, image }) => {
               </Marker>
             </MapContainer>
           ) : (
-            <p>{loading ? <>Loading map...<Spinner animation="grow" /></> : "Unable to load map."}</p>
+            <p className="map">
+              {loading ? (
+                <>
+                  Loading map  <CircularProgress size={25} variant="indeterminate" />
+                </>
+              ) : (
+                "Unable to load map."
+              )}
+            </p>
           )}
         </DialogContent>
         <DialogActions>

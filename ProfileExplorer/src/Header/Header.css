@@ -1,0 +1,99 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.logo {
+  text-align: left;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.nav {
+  text-align: center;
+  flex: 1;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  justify-content: center;
+  padding: 0;
+  display: flex;
+  flex: 1;
+  gap: 5em;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 16px;
+}
+
+.btn-grp{
+  display: flex;
+  gap: 1em;
+  margin-top: 1rem; 
+  justify-content: space-around;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-list {
+    flex-direction: row ; /* Stack nav items vertically */
+    margin: 1.5em;
+    gap: 1.5em; /* Adjust spacing */
+  }
+
+  .nav-link {
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  .btn-grp {
+    flex-direction: column; /* Stack the buttons vertically */
+    gap: 1rem; /* Adjust button spacing */
+  }
+}
+
+/* For smaller screens (mobile devices), adjust the logo and tagline, and stack nav items */
+@media (max-width: 768px) {
+  .logo {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .tagline {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .nav-list {
+    flex-direction: row; /* Stack nav items vertically */
+    gap: 1.5em; /* Adjust spacing */
+    margin: 1.5em;
+  }
+
+  .nav-link {
+    font-size: 14px; /* Adjust font size for mobile */
+    text-align: center; /* Center nav links */
+  }
+
+  .btn-grp {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 1rem; /* Adjust spacing for buttons */
+    margin-top: 15px;
+  }
+}
