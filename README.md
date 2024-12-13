@@ -41,7 +41,7 @@ Profile Explorer is a web application that allows users to view a collection of 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/profile-explorer.git
+   git clone https://github.com/Varun-Visave/ProfileExplorer.git
 
 Or download the repository as a ZIP file and extract it.
 
